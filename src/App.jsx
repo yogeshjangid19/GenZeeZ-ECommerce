@@ -14,7 +14,7 @@ import AddProduct from './pages/admin/page/AddProduct';
 import UpdateProduct from './pages/admin/page/UpdateProduct';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import AllProducts from './pages/allproducts/AllProducts';
+import AllProducts from './pages/allproducts/Allproducts';
 
 const ProtectedRoute = ({ children }) => {
   const user = localStorage.getItem('user');
