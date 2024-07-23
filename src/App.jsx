@@ -6,7 +6,7 @@ import Order from './pages/order/Order';
 import Cart from './pages/cart/Cart';
 import Dashboard from './pages/admin/dashboard/Dashboard';
 import NoPage from './pages/nopage/NoPage';
-import MyState from './context/data/MyState';
+import MyState from './context/data/myState';
 import Login from './pages/registration/Login';
 import Signup from './pages/registration/Signup';
 import ProductInfo from './pages/productInfo/ProductInfo';
@@ -14,23 +14,23 @@ import AddProduct from './pages/admin/page/AddProduct';
 import UpdateProduct from './pages/admin/page/UpdateProduct';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import AllProducts from './pages/allproducts/AllProducts';
+import AllProducts from './pages/allproducts/Allproducts';
 
 const ProtectedRoute = ({ children }) => {
   const user = localStorage.getItem('user');
   if (user) {
-    return children; 
+    return children;
   } else {
-    return <Navigate to="/login" />; // Redirect to login page if no user
+    return <Navigate to="/login" />;
   }
 };
 
 const ProtectedRouteForAdmin = ({ children }) => {
   const admin = JSON.parse(localStorage.getItem('user'));
   if (admin && admin.user.email === 'admin@example.com') {
-    return children; // Render the children components if admin exists and email matches
+    return children;
   } else {
-    return <Navigate to="/login" />; // Redirect to login page if not admin or email doesn't match
+    return <Navigate to="/login" />;
   }
 };
 
